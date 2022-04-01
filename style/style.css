@@ -15,30 +15,86 @@ body {
     font-family: "Quicksand", sans-serif;
     /* background: var(--Dark-cyan); */
 }
+body {
+    background: var(--Dark-cyan);
+    background-image: url("../assets/bg-pattern-top.svg"), url("../assets/bg-pattern-bottom.svg");
+    background-position: left, right;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .profile-card {
     border-radius: 8px;
     width: 85%;
-    margin: 0 auto;
+    background: white;
+    position: relative;
 }
 .profile-card-top {
     background-image: url("../assets/bg-pattern-card.svg");
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 120px;
+    position: relative;
 }
-.profile-card-top img {
+.profile-card-top div {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: -53px;
+    z-index: 1;
+}
+.image {
+    position: absolute;
+    top: calc(120px - 53px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.image img {
     border-radius: 50%;
     border: 5px solid white;
 }
-.profile-card-bottom__datos-seguidores{
+.profile-card-bottom {
+    z-index: 0;
+}
+
+.profile-card-bottom__datos-profile div {
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: var(--Name-stats-Font-size);
+}
+.profile-card-bottom__datos-profile div span:nth-child(1) {
+    font-weight: 700;
+    margin-right: 8px;
+}
+.profile-card-bottom__datos-profile div span:nth-child(2) {
+    color: var(--Dark-gray);
+}
+.profile-card-bottom__datos-profile > p {
+    color: var(--Dark-gray);
+    text-align: center;
+}
+.profile-card-bottom__datos-seguidores {
     display: flex;
     justify-content: space-around;
-    border-top: 1px solid var(--Dark-grayish-blue);
+    border-top: 1px solid var(--Dark-gray);
 }
-.profile-card-bottom__datos-seguidores div p:nth-child(1){
+.profile-card-bottom__datos-seguidores div p:nth-child(1) {
     font-size: var(--Name-stats-Font-size);
     font-weight: 700;
     text-align: center;
 }
-.profile-card-bottom__datos-seguidores div p:nth-child(2){
+.profile-card-bottom__datos-seguidores div p:nth-child(2) {
     font-weight: 400;
     color: var(--Dark-gray);
     font-size: 14px;
